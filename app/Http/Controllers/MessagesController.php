@@ -20,7 +20,7 @@ class MessagesController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Request $request) {
-        $allMessages = Messages::orderBy('created_at', 'desc')->paginate(2);
+        $allMessages = Messages::orderBy('created_at', 'desc')->paginate(10);
         return view('index', ['messages' => $allMessages]);
     }
 
